@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What To Buy - My Grocery List</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="navbar" class="navbar bg-light">
+        <div class="container">
+          <h1 class="logo font-big">
+            <i class="fas fa-shopping-cart"></i>Super<span class="text-dark"
+              >List</span
+            >
+          </h1>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="bg-primary">
+      <div class="container">
+        <div class="list-heading">
+          <h2>
+            <span class="text-primary">Create</span> Your Own Shopping List
+          </h2>
+          <p>From now on you will never forget your goods !</p>
+        </div>
+        <form>
+          <div class="list-inputs">
+            <input
+              class="text-input"
+              type="text"
+              name="goods"
+              id="goods"
+              placeholder="Add an item"
+              required
+            />
+            <select class="combo-box" name="quantity" id="quantity" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="footer bg-light">
+        <div class="container">
+          <div class="contact-icons">
+            <a href="https://www.facebook.com/tomer.arzuan/" target="_blank"
+              ><i class="fab fa-facebook-square fa-3x"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/tomerarzuan/" target="_blank"
+              ><i class="fab fa-linkedin fa-3x"></i
+            ></a>
+          </div>
+          <p>Copyrights &copy; - SuperList</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
