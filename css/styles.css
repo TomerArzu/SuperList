@@ -12,6 +12,7 @@
   --lightGreen-background: #f1f3c0;
   --primary-text: #ed6663;
   --dark-color: #443737;
+  --mark-light: #ea9abb;
 }
 
 body {
@@ -48,8 +49,9 @@ body {
   color: var(--primary-text);
 }
 
-.text-input {
-  border: 1px solid #ccc;
+.input-box {
+  border: 1px solid var(--mark-light);
+  border-radius: 4px;
 }
 
 .btn {
@@ -66,10 +68,19 @@ body {
   color: #f4f4f4;
 }
 
+.btn-dark {
+  background: var(--dark-color);
+  color: #f4f4f4;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
 /* TODO: Style the combo-box */
 .combo-box {
-  position: relative;
-  border: 1px solid #ccc;
+  cursor: pointer;
+  appearance: none;
 }
 
 /* Page specific */
@@ -114,13 +125,11 @@ body {
 }
 
 /* main */
-main {
+/* main {
   height: 500px;
-}
-
-/* main > div {
-  border: 1px solid black;
 } */
+
+/* LIST HEADING */
 
 .list-heading {
   padding: 20px 0;
@@ -130,35 +139,43 @@ main {
   padding-top: 10px;
 }
 
+/* LIST CONTROLS */
+
 .list-inputs {
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.list-inputs .text-input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30%;
+.list-inputs .set-items .text-input {
+  width: 300px;
   padding: 5px;
-  /* margin-right: 10px; */
+
+  /* animation: wider-text-input 0.2s forwards ease-in; */
 }
 
-.list-inputs > select {
-  position: absolute;
-  top: 0;
-  left: 32%;
-  padding: 4px;
+/* @keyframes wider-text-input {
+  to {
+    width: 300px;
+  }
+} */
+
+.list-inputs .set-items .combo-boxes {
+  display: inline-block;
 }
 
-.list-inputs > button {
-  position: absolute;
-  right: 0;
+.list-inputs .set-items .combo-boxes > * {
+  padding: 5px;
+  width: 90px;
 }
+
+/* Grocery table */
 
 /* footer */
 .footer {
   border-top: 1px solid #ccc;
-  padding: 50px;
+  padding: 20px;
 }
 
 .contact-icons i {

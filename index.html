@@ -39,37 +39,117 @@
         </div>
         <form>
           <div class="list-inputs">
-            <input
-              class="text-input"
-              type="text"
-              name="goods"
-              id="goods"
-              placeholder="Add an item"
-              required
-            />
-            <select class="combo-box" name="quantity" id="quantity" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-            <button class="btn btn-primary" type="submit">Add</button>
+            <div class="set-items">
+              <input
+                class="text-input input-box"
+                type="text"
+                name="goods"
+                id="goods"
+                placeholder="Add an item"
+                required
+              />
+              <div class="combo-boxes">
+                <select
+                  class="combo-box input-box quantity"
+                  name="quantity"
+                  id="quantity"
+                  required
+                >
+                  <option selected hidden>Quantity</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <select
+                  class="combo-box input-box priority"
+                  name="priority"
+                  id="priority"
+                  required
+                >
+                  <option selected hidden>Priority</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <div class="list-modifiers">
+              <button class="btn btn-primary" type="submit">Add</button>
+              <button class="btn btn-dark" type="">Clear List</button>
+            </div>
           </div>
         </form>
+        <div class="grocery-list-container">
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+            </div>
+            <div class="grocery-card">
+              <h1>grocery Item</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eos ipsam dolor ad aperiam ullam.</p>
+          </div>
+        </div>
+        </div>
       </div>
     </main>
+
     <footer>
       <div class="footer bg-light">
         <div class="container">
           <div class="contact-icons">
             <a href="https://www.facebook.com/tomer.arzuan/" target="_blank"
-              ><i class="fab fa-facebook-square fa-3x"></i
+              ><i class="fab fa-facebook-square fa-2x"></i
             ></a>
             <a href="https://www.linkedin.com/in/tomerarzuan/" target="_blank"
               ><i class="fab fa-linkedin fa-3x"></i
