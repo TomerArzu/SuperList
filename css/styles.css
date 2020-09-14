@@ -19,6 +19,23 @@
 body {
   font-family: "Grandstander", cursive;
   line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  flex: 1;
+}
+
+main {
+  flex: 20;
+  overflow: hidden;
+}
+
+footer {
+  flex: 1;
 }
 
 .font-big {
@@ -26,10 +43,11 @@ body {
 }
 
 /* Utils */
-.container {
+.centralize-content {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+  height: 100%;
 }
 
 .text-dark {
@@ -129,39 +147,46 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-.navbar .container {
+.navbar .centralize-content {
   display: flex;
   justify-content: space-between;
 }
 
-.navbar .container ul {
+.navbar .centralize-content ul {
   display: flex;
   list-style: none;
   align-items: center;
 }
 
-.navbar .container ul li {
+.navbar .centralize-content ul li {
   margin-right: 25px;
   transform: scale(0.8);
   transition: all 0.25s ease;
 }
 
-.navbar .container ul li:hover {
+.navbar .centralize-content ul li:hover {
   transform: scale(1);
 }
 
-.navbar .container ul a {
+.navbar .centralize-content ul a {
   text-decoration: none;
   color: var(--primary-text);
   font-size: 1.5rem;
   transition: all 0.25s ease;
 }
 
-.navbar .container ul li a:hover {
+.navbar .centralize-content ul li a:hover {
   color: var(--dark-color);
 }
 
 /* main */
+
+/* main overlay */
+
+#main .list-whapper {
+  display: flex;
+  flex-direction: column;
+}
 
 /* LIST HEADING */
 
@@ -180,6 +205,8 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+  padding-bottom: 10px;
+  /* box-shadow: 3px 3px 10px 1px inset rgba(0, 0, 0, 0.3); */
 }
 
 .list-inputs .set-items .text-input {
@@ -199,22 +226,23 @@ body {
 /* Grocery table */
 
 .grocery-list-container {
-  max-width: 90%;
+  width: 90%;
   margin: 0 auto;
-  padding: 25px 0 80px;
-  max-height: 800px;
+  padding: 25px 12px 0px 80px; /* !! IN COMMENT BECAUSE OF THE SCROLL !! */
   overflow: auto;
 }
+
 /* Reuseable and Extendable card */
 .row-extendable-card {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  width: 95%;
+  margin: 10px auto;
 }
 
 .row-extendable-card .card-collapsed:hover {
   opacity: 0.85;
-  /* box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3); */
+  box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .row-extendable-card .card-collapsed {
@@ -243,7 +271,19 @@ body {
   margin: 0 auto;
   border-top: none;
   border-radius: 0px 0px 10px 10px;
-  transform: scale(1);
+  display: none;
+  max-height: 0;
+  text-align: left;
+  transition: max-height 0.5s ease-out;
+}
+
+.sub-card > p {
+  padding: 0 10px;
+}
+
+.row-extendable-card:hover .sub-card {
+  display: block;
+  max-height: 100%;
 }
 
 /* footer */
@@ -261,3 +301,48 @@ body {
 .contact-icons i:hover {
   color: var(--primary-text);
 }
+
+/* Scrolling */
+
+/* .ss-wrapper {
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+.ss-content {
+  height: 100%;
+  width: 100%;
+  padding: 0 32px 0 0;
+  position: relative;
+  right: -18px;
+  overflow: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ss-scroll {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  width: 9px;
+  border-radius: 4px;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.25s linear;
+}
+
+.ss-container:hover .ss-scroll {
+  opacity: 1;
+}
+
+.ss-grabbed {
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+} */
