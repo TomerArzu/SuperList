@@ -1,535 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What To Buy - My Grocery List</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header>
-      <nav id="navbar" class="navbar bg-light">
-        <div class="centralize-content">
-          <h1 class="logo font-big">
-            <i class="fas fa-shopping-cart"></i>Super<span class="text-dark"
-              >List</span
-            >
-          </h1>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main id="main" class="bg-primary">
-      <div class="list-whapper centralize-content">
-        <div class="list-heading">
-          <h2>
-            <span class="text-primary">Create</span> Your Own Shopping List
-          </h2>
-          <p>From now on you will never forget your goods !</p>
-        </div>
-        <form>
-          <div class="list-inputs">
-            <div class="set-items">
-              <input
-                class="text-input input-box"
-                type="text"
-                name="goods"
-                id="goods"
-                placeholder="Add an item"
-                required
-              />
-              <div class="combo-boxes">
-                <select
-                  class="combo-box input-box quantity"
-                  name="quantity"
-                  id="quantity"
-                  required
-                >
-                  <option selected hidden>Quantity</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-                <select
-                  class="combo-box input-box priority"
-                  name="priority"
-                  id="priority"
-                  required
-                >
-                  <option selected hidden>Priority</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>What To Buy - My Grocery List</title>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+            integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav id="navbar" class="navbar bg-light">
+                <div class="centralize-content">
+                    <h1 class="logo font-big">
+                        <i class="fas fa-shopping-cart"></i>Super<span
+                            class="text-dark"
+                            >List</span
+                        >
+                    </h1>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main id="main" class="bg-primary">
+            <div class="list-whapper centralize-content">
+                <div class="list-heading">
+                    <h2>
+                        <span class="text-primary">Create</span> Your Own
+                        Shopping List
+                    </h2>
+                    <p>From now on you will never forget your goods !</p>
+                </div>
+                <form>
+                    <div class="list-inputs">
+                        <div class="set-items">
+                            <input
+                                class="text-input input-box"
+                                type="text"
+                                name="goods"
+                                id="goods"
+                                placeholder="Add an item"
+                                required
+                            />
+                            <div class="combo-boxes">
+                                <select
+                                    class="combo-box input-box quantity"
+                                    name="quantity"
+                                    id="quantity"
+                                    required
+                                >
+                                    <option selected hidden>Quantity</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <select
+                                    class="combo-box input-box priority"
+                                    name="priority"
+                                    id="priority"
+                                    required
+                                >
+                                    <option selected hidden>Priority</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="list-modifiers">
+                            <button class="btn btn-primary" type="submit">
+                                Add
+                            </button>
+                            <button class="btn btn-dark" type="">
+                                Clear List
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="grocery-list-container">
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row-extendable-card">
+                        <div
+                            class="card-collapsed bg-secondary-trans bold-secondary-border"
+                        >
+                            <div class="card-heading">
+                                <input
+                                    type="checkbox"
+                                    name="added-item"
+                                    class="check-box checkbox-v-gr"
+                                />
+                                <h3>Grocery Item</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Add More Comments</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>Quantity: <span>5</span></p>
+                            </div>
+                        </div>
+                        <div class="sub-card bg-secondary-trans">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolore iusto illum
+                                necessitatibus ipsam a. Ducimus, accusamus amet.
+                                Error, dicta? Dicta asperiores magnam temporibus
+                                natus in vel, at consequuntur voluptatum nobis?
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="list-modifiers">
-              <button class="btn btn-primary" type="submit">Add</button>
-              <button class="btn btn-dark" type="">Clear List</button>
-            </div>
-          </div>
-        </form>
-        <div class="grocery-list-container">
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-          <div class="row-extendable-card">
-            <div
-              class="card-collapsed bg-secondary-trans bold-secondary-border"
-            >
-              <div class="card-heading">
-                <input
-                  type="checkbox"
-                  name="added-item"
-                  class="check-box checkbox-v-gr"
-                />
-                <h3>Grocery Item</h3>
-              </div>
-              <div class="card-content">
-                <p>Add More Comments</p>
-              </div>
-              <div class="card-footer">
-                <p>Quantity: <span>5</span></p>
-              </div>
-            </div>
-            <div class="sub-card bg-secondary-trans">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                iusto illum necessitatibus ipsam a. Ducimus, accusamus amet.
-                Error, dicta? Dicta asperiores magnam temporibus natus in vel,
-                at consequuntur voluptatum nobis?
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+        </main>
 
-    <footer>
-      <div class="footer bg-light">
-        <div class="centralize-content">
-          <div class="contact-icons">
-            <a href="https://www.facebook.com/tomer.arzuan/" target="_blank"
-              ><i class="fab fa-facebook-square fa-2x"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/tomerarzuan/" target="_blank"
-              ><i class="fab fa-linkedin fa-2x"></i
-            ></a>
-          </div>
-          <p>Copyrights &copy; Tomer Arzuan 2020 - SuperList</p>
-        </div>
-      </div>
-    </footer>
-    <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/simple-scrollbar.js"></script>
+        <!-- <footer>
+            <div class="footer bg-light">
+                <div class="centralize-content">
+                    <div class="contact-icons">
+                        <a
+                            href="https://www.facebook.com/tomer.arzuan/"
+                            target="_blank"
+                            ><i class="fab fa-facebook-square fa-2x"></i
+                        ></a>
+                        <a
+                            href="https://www.linkedin.com/in/tomerarzuan/"
+                            target="_blank"
+                            ><i class="fab fa-linkedin fa-2x"></i
+                        ></a>
+                    </div>
+                    <p>Copyrights &copy; Tomer Arzuan 2020 - SuperList</p>
+                </div>
+            </div>
+        </footer> -->
+        <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/simple-scrollbar.js"></script>
     <script>
       let scrollDiv = document.querySelector(".grocery-list-container");
       SimpleScrollbar.initEl(scrollDiv);
     </script> -->
-  </body>
+    </body>
+    <script src="js/script.js"></script>
 </html>
