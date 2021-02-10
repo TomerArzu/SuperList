@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import "utils/extendable-card.css";
 
 /* Globals */
 * {
@@ -22,7 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 header {
@@ -31,7 +32,7 @@ header {
 
 main {
     flex: auto;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 footer {
@@ -132,6 +133,22 @@ footer {
     border: 3px solid rgba(237, 102, 100, 1);
 }
 
+.input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px;
+}
+
+.input-field > label {
+    padding-bottom: 5px;
+}
+
+.input-field > input {
+    padding: 4px 0;
+    font-family: inherit;
+}
+
 /* TODO: Style the combo-box */
 .combo-box {
     cursor: pointer;
@@ -187,7 +204,7 @@ footer {
 
 /* main layout */
 
-#main .list-whapper {
+#main .list-wrapper {
     display: flex;
     flex-direction: column;
 }
@@ -196,123 +213,48 @@ footer {
 
 .list-heading {
     padding: 20px 0;
+    flex: 1;
 }
 
 .list-heading > p {
     padding-top: 10px;
 }
 
-/* LIST CONTROLS */
+/* LIST add new item */
 
-.list-inputs {
+.add-item-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* FORM */
+
+.add-item-form.open {
+    height: 300px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 10px;
-    /* box-shadow: 3px 3px 10px 1px inset rgba(0, 0, 0, 0.3); */
 }
 
-.list-inputs .set-items .text-input {
-    width: 300px;
-    padding: 5px;
+.form-col {
+    display: flex;
+    flex-direction: column;
 }
 
-.list-inputs .set-items .combo-boxes {
-    display: inline-block;
+.add-item > button {
+    margin: 20px auto;
+    width: auto;
 }
 
-.list-inputs .set-items .combo-boxes > * {
-    padding: 5px;
-    width: 90px;
-}
+/* list */
 
-/* Grocery table */
-
-.grocery-list-container {
+.list-container {
     width: 90%;
     height: 100%;
     margin: 0 auto;
-    padding: 25px 12px 0px 80px; /* !! IN COMMENT BECAUSE OF THE SCROLL !! */
-    overflow: auto;
-}
-
-/* Reuseable and Extendable card */
-.row-extendable-card {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    margin: 10px auto;
-    position: relative;
-}
-
-/* FOR ARROW EMOJI NEXT TO CARD */
-.row-extendable-card::before {
-    content: "\25B2";
-    position: absolute;
-    float: left;
-    right: 100%;
-    top: 12px;
-    padding: 0 10px;
-    font-size: 1.2rem;
-    transform: scale(1) rotate(90deg);
-    transition: all 0.2s ease-in;
-}
-
-.row-extendable-card.open::before {
-    transform: rotate(180deg);
-}
-
-.row-extendable-card .card-collapsed:hover {
-    opacity: 0.85;
-    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.row-extendable-card .card-collapsed {
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-
-.row-extendable-card .card-collapsed .card-heading .check-box {
-    margin-right: 20px;
-}
-
-.row-extendable-card .card-collapsed .card-heading > h3 {
-    display: inline;
-}
-
-.row-extendable-card .card-collapsed .card-footer > p > span {
-    margin-left: 5px;
-}
-
-.row-extendable-card .sub-card {
-    width: 98%;
-    margin: 0 auto;
-    height: 0;
-    text-align: left;
-    transition: height 0.2s ease-out;
-}
-
-.sub-card > p {
-    padding: 10px;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.1s ease-in;
-}
-
-.row-extendable-card .sub-card.open {
-    height: 100px;
-    border-radius: 0px 0px 10px 10px;
-}
-
-.row-extendable-card .sub-card.open > p {
-    opacity: 1;
-    display: block;
-    padding: 10px;
+    padding: 25px 12px 0px 80px;
+    flex: 20;
+    /* overflow: auto; */
 }
 
 /* footer */

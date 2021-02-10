@@ -17,7 +17,7 @@
             <nav id="navbar" class="navbar bg-light">
                 <div class="centralize-content">
                     <h1 class="logo font-big">
-                        <i class="fas fa-shopping-cart"></i>Super<span
+                        <i class="fas fa-shopping-cart"></i>Gaso<span
                             class="text-dark"
                             >List</span
                         >
@@ -31,15 +31,82 @@
             </nav>
         </header>
         <main id="main" class="bg-primary">
-            <div class="list-whapper centralize-content">
+            <div class="list-wrapper centralize-content">
                 <div class="list-heading">
                     <h2>
-                        <span class="text-primary">Create</span> Your Own
-                        Shopping List
+                        <span class="text-primary">Track</span> Your Gas
+                        Consumption
                     </h2>
-                    <p>From now on you will never forget your goods !</p>
+                    <p>Add new refueling To list</p>
                 </div>
-                <form>
+                <div class="add-item-container">
+                    <form action="">
+                        <div class="add-item-form open">
+                            <div class="form-col">
+                                <div class="input-field">
+                                    <label for="refuel-date">Refuel Date</label>
+                                    <input
+                                        type="date"
+                                        name="refuel-date"
+                                        id="refuel-date"
+                                    />
+                                </div>
+                                <div class="input-field">
+                                    <label for="litersAmount"
+                                        >Liters Amount</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="litersAmount"
+                                        id="litersAmount"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="input-field">
+                                    <label for="refuel-date">Refuel Date</label>
+                                    <input
+                                        type="date"
+                                        name="refuel-date"
+                                        id="refuel-date"
+                                    />
+                                </div>
+                                <div class="input-field">
+                                    <label for="litersAmount"
+                                        >Liters Amount</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="litersAmount"
+                                        id="litersAmount"
+                                    />
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="input-field">
+                                    <label for="refuel-date">Refuel Date</label>
+                                    <input
+                                        type="date"
+                                        name="refuel-date"
+                                        id="refuel-date"
+                                    />
+                                </div>
+                                <div class="input-field">
+                                    <label for="litersAmount"
+                                        >Liters Amount</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="litersAmount"
+                                        id="litersAmount"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <button class="btn btn-primary">Create New Record</button>
+                </div>
+                <!-- <form>
                     <div class="list-inputs">
                         <div class="set-items">
                             <input
@@ -91,12 +158,9 @@
                             </button>
                         </div>
                     </div>
-                </form>
-                <div class="grocery-list-container">
-                    <div
-                        class="row-extendable-card"
-                        onclick="expendCollapseCard(this)"
-                    >
+                </form> -->
+                <div class="list-container">
+                    <div class="row-extendable-card">
                         <div
                             class="card-collapsed bg-secondary-trans bold-secondary-border"
                         >

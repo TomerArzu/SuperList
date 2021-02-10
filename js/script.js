@@ -1,4 +1,4 @@
-const list = document.querySelector(".grocery-list-container");
+const list = document.querySelector(".list-container");
 const card = document.querySelector(".row-extendable-card");
 
 list.addEventListener("click", function (event) {
