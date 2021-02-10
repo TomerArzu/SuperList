@@ -2,19 +2,16 @@ const list = document.querySelector(".grocery-list-container");
 const card = document.querySelector(".row-extendable-card");
 
 list.addEventListener("click", function (event) {
-    console.log(event.target.parentElement);
-    if (event.target.parentElement.classList.contains("opened")) {
-        event.target.classList.remove("opened");
-    } else {
-        event.target.classList.add("opened");
+    if (event.target.classList.contains("card-collapsed")) {
+        const subCard = event.target.nextElementSibling;
+        if (subCard.classList.contains("open")) {
+            subCard.classList.remove("open");
+            subCard.closest(".row-extendable-card").classList.remove("open");
+        } else {
+            subCard.classList.add("open");
+            subCard.closest(".row-extendable-card").classList.add("open");
+        }
     }
 });
 
-function expendCollapseCard(elem) {
-    // console.log(elem);
-    if (elem.classList.contains("opened")) {
-        elem.classList.remove("opened");
-    } else {
-        elem.classList.add("opened");
-    }
-}
+function createExtendableRow() {}

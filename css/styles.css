@@ -259,13 +259,14 @@ footer {
     transition: all 0.2s ease-in;
 }
 
-.row-extendable-card.opened::before {
+.row-extendable-card.open::before {
     transform: rotate(180deg);
 }
 
 .row-extendable-card .card-collapsed:hover {
     opacity: 0.85;
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .row-extendable-card .card-collapsed {
@@ -303,12 +304,12 @@ footer {
     transition: opacity 0.1s ease-in;
 }
 
-.row-extendable-card.opened .sub-card {
+.row-extendable-card .sub-card.open {
     height: 100px;
     border-radius: 0px 0px 10px 10px;
 }
 
-.row-extendable-card.opened .sub-card > p {
+.row-extendable-card .sub-card.open > p {
     opacity: 1;
     display: block;
     padding: 10px;
