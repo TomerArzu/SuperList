@@ -1,5 +1,8 @@
 const list = document.querySelector(".list-container");
 const card = document.querySelector(".row-extendable-card");
+const createRecordBtn = document.getElementById("createRecord");
+const newItemForm = document.getElementById("newItemForm");
+const formInputWarper = document.querySelector(".add-item-form");
 
 list.addEventListener("click", function (event) {
     if (event.target.classList.contains("card-collapsed")) {
@@ -14,4 +17,10 @@ list.addEventListener("click", function (event) {
     }
 });
 
-function createExtendableRow() {}
+createRecordBtn.onclick = function () {
+    if (formInputWarper.classList.toggle("open")) {
+        // newItemForm.style.display = "block";
+    } else {
+        // newItemForm.style.display = "none";
+    }
+};

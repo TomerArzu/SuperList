@@ -22,8 +22,8 @@ body {
     line-height: 1.4;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    /* overflow: hidden; */
+    /* height: 100vh; */
+    overflow-y: auto;
 }
 
 header {
@@ -32,7 +32,6 @@ header {
 
 main {
     flex: auto;
-    overflow-y: scroll;
 }
 
 footer {
@@ -76,11 +75,6 @@ footer {
 
 .bold-secondary-border {
     border: 5px solid var(--primary-text-trans);
-}
-
-.input-box {
-    border: 1px solid var(--mark-light);
-    border-radius: 4px;
 }
 
 .btn {
@@ -149,14 +143,20 @@ footer {
     font-family: inherit;
 }
 
+.input-box {
+    border: 1px solid var(--mark-light);
+    border-radius: 4px;
+    max-width: 400px;
+    max-height: 200px;
+}
+
 /* TODO: Style the combo-box */
 .combo-box {
     cursor: pointer;
     appearance: none;
-}
-
-.combo-box:hover {
-    border: 2px solid var(--mark-light);
+    padding: 4px 20px 4px 10px;
+    width: 160px;
+    font-family: inherit;
 }
 
 /* Page specific */
@@ -229,16 +229,31 @@ footer {
 
 /* FORM */
 
+/* TODO: learn how to compute the height to opened new record form */
 .add-item-form.open {
     height: 300px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
     flex-direction: row;
+    transform: scale(1);
+    transition: all 0.2s ease-out;
+}
+
+.add-item-form {
+    transform: scale(0);
+    height: 0;
+    transition: height 0.2s ease-out;
 }
 
 .form-col {
     display: flex;
     flex-direction: column;
+}
+
+.form-col textarea {
+    flex-basis: 10;
 }
 
 .add-item > button {
@@ -255,6 +270,10 @@ footer {
     padding: 25px 12px 0px 80px;
     flex: 20;
     /* overflow: auto; */
+}
+
+.list-container:nth-last-child(1) {
+    margin-bottom: 50px;
 }
 
 /* footer */
