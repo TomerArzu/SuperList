@@ -1,8 +1,3 @@
-// form
-const formInputWarper = document.querySelector(".add-item-form");
-const listModifiers = document.querySelector(".list-modifiers");
-const closeFormBtn = document.getElementById("closeForm");
-
 // list modifiers
 const createRecordBtn = document.getElementById("createRecord");
 
@@ -23,20 +18,25 @@ list.addEventListener("click", function (event) {
     }
 });
 
-createRecordBtn.onclick = function () {
-    formToggler();
-};
-
-closeFormBtn.addEventListener("click", function (event) {
-    formToggler();
-    event.preventDefault();
+createRecordBtn.addEventListener("click", function () {
+    const modalForm = document.getElementById("modal-form");
+    if (!modalForm.hasChildNodes()) {
+        const formTemplate = document.querySelector("#newItemFormTemplate");
+        const formClone = formTemplate.content.cloneNode(true);
+        attachModal(modalForm, formClone);
+    } else {
+        modalForm.firstElementChild.classList.remove("is-visible");
+    }
 });
 
-function formToggler() {
-    if (formInputWarper.classList.toggle("expend")) {
-        createRecordBtn.style.display = "none";
-    } else {
-        // listModifiers.classList.add("expend");
-        createRecordBtn.style.display = "inline-block";
-    }
+function attachModal(fragment, content) {
+    const modalTemplate = document.querySelector("#modalTemplate");
+    const modalClone = modalTemplate.content.cloneNode("true");
+    const modalContent = modalClone.getElementById("m-content");
+    modalContent.appendChild(content);
+    fragment.appendChild(modalClone);
+}
+
+function detachModal(modalParent) {
+    // TODO: complete the function
 }

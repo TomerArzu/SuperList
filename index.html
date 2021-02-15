@@ -39,18 +39,12 @@
                     </h2>
                     <p>Add new refueling To list</p>
                 </div>
-                <div id="inputModal" class="modal">
-                    <div class="modal-dialog">
-                        <header class="modal-header"></header>
-                        <section class="modal-content"></section>
-                        <footer class="modal-footer"></footer>
-                    </div>
-                </div>
+                <section id="modal-form"></section>
                 <div class="list-modifiers">
                     <button
                         id="createRecord"
                         class="btn btn-primary"
-                        data-open="open-modal"
+                        data-open="inputModal"
                     >
                         Create New Record
                     </button>
@@ -511,6 +505,130 @@
                 </div>
             </div>
         </footer>
+
+        <!-- TEMPLATES -->
+        <!-- Modal template -->
+        <template id="modalTemplate">
+            <div id="modal" class="modal">
+                <div class="modal-dialog">
+                    <div id="m-header" class="modal-header">
+                        <button
+                            class="btn btn-dark"
+                            aria-label="close-modal"
+                            data-close
+                        >
+                            X
+                        </button>
+                    </div>
+                    <div id="m-content" class="modal-content"></div>
+                    <div id="m-footer" class="modal-footer"></div>
+                </div>
+            </div>
+        </template>
+        <!-- Form template -->
+        <template id="newItemFormTemplate">
+            <form id="newItemForm" action="">
+                <div class="add-item-form flex-grid">
+                    <div class="flex-col">
+                        <div class="input-field">
+                            <label for="refuel-date">Refuel Date</label>
+                            <input
+                                class="input-box"
+                                type="date"
+                                name="refuelDate"
+                                id="refuelDate"
+                            />
+                        </div>
+                        <div class="input-field">
+                            <label for="litersAmount">Liters You Filled</label>
+                            <input
+                                class="input-box"
+                                type="text"
+                                name="litersAmount"
+                                id="litersAmount"
+                            />
+                        </div>
+                        <div class="input-field">
+                            <label for="kmFromLastRefuel"
+                                >Km From Last Refuel</label
+                            >
+                            <input
+                                class="input-box"
+                                type="text"
+                                name="kmFromLastRefuel"
+                                id="kmFromLastRefuel"
+                            />
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="input-field">
+                            <label for="amountPaid">Amount Paid</label>
+                            <input
+                                class="input-box"
+                                type="text"
+                                name="amountPaid"
+                                id="amountPaid"
+                            />
+                        </div>
+                        <div class="input-field">
+                            <label for="gasStation">Gas Station</label>
+                            <select
+                                class="combo-box input-box"
+                                name="gasStation"
+                                id="gasStation"
+                                required
+                            >
+                                <option selected hidden>Gas Station</option>
+                                <option value="1">Paz</option>
+                                <option value="2">Sonol</option>
+                                <option value="3">Delek</option>
+                                <option value="3">Dor Alon</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label for="gasStationCity">Gas Station City</label>
+                            <input
+                                class="input-box"
+                                type="text"
+                                name="gasStationCity"
+                                id="gasStationCity"
+                            />
+                        </div>
+                    </div>
+                    <div class="flex-col">
+                        <div class="input-field">
+                            <label for="comments">Add More Comments</label>
+                            <textarea
+                                class="input-box"
+                                name="comments"
+                                id="comments"
+                                cols="40"
+                                rows="5"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div class="form-btns">
+                        <button
+                            id="addItemBtn"
+                            class="btn btn-primary"
+                            type="submit"
+                        >
+                            Add Item
+                        </button>
+                        <button
+                            id="resetForm"
+                            class="btn btn-dark"
+                            type="reset"
+                        >
+                            Clear All
+                        </button>
+                        <button id="closeForm" class="btn btn-dark">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </template>
     </body>
     <script src="js/script.js"></script>
 </html>

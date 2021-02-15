@@ -229,23 +229,89 @@ footer {
     padding-top: 10px;
 }
 
+/* Modal */
+
+/* .modal controls all what happened outside of the dialog */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgb(0, 0, 0, 0.85);
+    z-index: 999;
+
+    animation: modalBackgroundFade 0.2s forwards ease-in;
+}
+
+@keyframes modalBackgroundFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-dialog {
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 5px;
+    background: rgb(244, 244, 244, 1);
+    overflow: auto;
+    cursor: default;
+    animation: modalDialogEntrance 0.6s forwards
+        cubic-bezier(0.51, 0.92, 0.24, 1.05);
+}
+
+@keyframes modalDialogEntrance {
+    from {
+        transform: translateY(-200%);
+        /* max-width: 0; */
+        /* max-height: 0; */
+    }
+    to {
+        transform: translateY(0%);
+        /* max-width: 800px; */
+        /* max-height: 80vh; */
+    }
+}
+
+.modal-dialog > * {
+    padding: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+    background: rgb(211, 211, 211);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header .modal-close {
+    font-size: 1.5rem;
+}
+
 /* FORM */
 
-.add-item-form.expend {
-    height: 300px;
+.add-item-form {
+    height: auto;
     align-items: center;
     justify-content: space-around;
-    transform: scaleY(1);
-    transition: all 0.2s ease-out;
 }
 
-.add-item-form {
-    transform: scaleY(0);
-    height: 0;
-    transition: height 0.2s ease-out;
-}
-
-.add-item-form.expend textarea {
+.add-item-form textarea {
     flex-basis: 10;
     max-width: 400px;
     max-height: 200px;
