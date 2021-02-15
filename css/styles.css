@@ -229,13 +229,6 @@ footer {
     padding-top: 10px;
 }
 
-/* LIST add new item */
-
-.add-item-container {
-    display: flex;
-    flex-direction: column;
-}
-
 /* FORM */
 
 .add-item-form.expend {

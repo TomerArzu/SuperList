@@ -1,5 +1,4 @@
 // form
-const newItemForm = document.getElementById("newItemForm");
 const formInputWarper = document.querySelector(".add-item-form");
 const listModifiers = document.querySelector(".list-modifiers");
 const closeFormBtn = document.getElementById("closeForm");
