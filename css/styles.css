@@ -240,16 +240,14 @@ footer {
 
 .add-item-form.expend {
     height: 300px;
-
     align-items: center;
     justify-content: space-around;
-
-    transform: scale(1);
-    transition: all 0.65s cubic-bezier(0.61, 0.31, 0.2, 1);
+    transform: scaleY(1);
+    transition: all 0.2s ease-out;
 }
 
 .add-item-form {
-    transform: scale(0);
+    transform: scaleY(0);
     height: 0;
     transition: height 0.2s ease-out;
 }
