@@ -146,8 +146,17 @@ footer {
 .input-box {
     border: 1px solid var(--mark-light);
     border-radius: 4px;
-    max-width: 400px;
-    max-height: 200px;
+}
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }
 
 /* TODO: Style the combo-box */
@@ -229,16 +238,14 @@ footer {
 
 /* FORM */
 
-/* TODO: learn how to compute the height to opened new record form */
-.add-item-form.open {
+.add-item-form.expend {
     height: 300px;
-    display: flex;
-    flex-wrap: wrap;
+
     align-items: center;
     justify-content: space-around;
-    flex-direction: row;
+
     transform: scale(1);
-    transition: all 0.2s ease-out;
+    transition: all 0.65s cubic-bezier(0.61, 0.31, 0.2, 1);
 }
 
 .add-item-form {
@@ -247,18 +254,32 @@ footer {
     transition: height 0.2s ease-out;
 }
 
-.form-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-col textarea {
+.add-item-form.expend textarea {
     flex-basis: 10;
+    max-width: 400px;
+    max-height: 200px;
+    min-height: 100px;
+    min-width: 280px;
 }
 
 .add-item > button {
     margin: 20px auto;
     width: auto;
+}
+
+.form-btns {
+    padding-bottom: 10px;
+}
+
+/* List Modifiers */
+
+.list-modifiers.expend {
+    display: block;
+}
+
+.list-modifiers.collapsed {
+    display: none;
+    transition: display 0.5 ease-out;
 }
 
 /* list */

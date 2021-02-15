@@ -41,8 +41,8 @@
                 </div>
                 <div class="add-item-container">
                     <form id="newItemForm" action="">
-                        <div class="add-item-form open">
-                            <div class="form-col">
+                        <div class="add-item-form flex-grid">
+                            <div class="flex-col">
                                 <div class="input-field">
                                     <label for="refuel-date">Refuel Date</label>
                                     <input
@@ -75,7 +75,7 @@
                                     />
                                 </div>
                             </div>
-                            <div class="form-col">
+                            <div class="flex-col">
                                 <div class="input-field">
                                     <label for="amountPaid">Amount Paid</label>
                                     <input
@@ -114,7 +114,7 @@
                                     />
                                 </div>
                             </div>
-                            <div class="form-col">
+                            <div class="flex-col">
                                 <div class="input-field">
                                     <label for="comments"
                                         >Add More Comments</label
@@ -128,8 +128,29 @@
                                     ></textarea>
                                 </div>
                             </div>
+                            <div class="form-btns">
+                                <button
+                                    id="addItemBtn"
+                                    class="btn btn-primary"
+                                    type="submit"
+                                >
+                                    Add Item
+                                </button>
+                                <button
+                                    id="resetForm"
+                                    class="btn btn-dark"
+                                    type="reset"
+                                >
+                                    Clear All
+                                </button>
+                                <button id="closeForm" class="btn btn-dark">
+                                    Close
+                                </button>
+                            </div>
                         </div>
                     </form>
+                </div>
+                <div class="list-modifiers">
                     <button id="createRecord" class="btn btn-primary">
                         Create New Record
                     </button>
@@ -145,13 +166,10 @@
                                     name="added-item"
                                     class="check-box checkbox-v-gr"
                                 />
-                                <h3>Grocery Item</h3>
-                            </div>
-                            <div class="card-content">
-                                <p>Add More Comments</p>
+                                <h3>Refuel Date</h3>
                             </div>
                             <div class="card-footer">
-                                <p>Quantity: <span>5</span></p>
+                                <p>Refuel Price</p>
                             </div>
                         </div>
                         <div class="sub-card bg-secondary-trans">
@@ -209,7 +227,7 @@
                                 <p>Add More Comments</p>
                             </div>
                             <div class="card-footer">
-                                <p>Quantity: <span>5</span></p>
+                                <p>Price <span>5</span></p>
                             </div>
                         </div>
                         <div class="sub-card bg-secondary-trans">
