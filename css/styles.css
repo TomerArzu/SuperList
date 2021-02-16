@@ -274,13 +274,9 @@ footer {
 @keyframes modalDialogEntrance {
     from {
         transform: translateY(-200%);
-        /* max-width: 0; */
-        /* max-height: 0; */
     }
     to {
         transform: translateY(0%);
-        /* max-width: 800px; */
-        /* max-height: 80vh; */
     }
 }
 
