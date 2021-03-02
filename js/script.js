@@ -70,5 +70,9 @@ function initModalButtons(modalParent) {
     });
     // close when we click outside the modal dialog
     // const modalOverlay = modalFragment.getElementById("modal");
-    modalFragment.onclick = detachModal;
+    modalFragment.onclick = (e) => {
+        if (e.target.id == "modal") {
+            detachModal(e);
+        }
+    };
 }
