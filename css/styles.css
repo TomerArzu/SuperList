@@ -3,169 +3,171 @@
 
 /* Globals */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary-background: #f6f7d4;
-    --lightGreen-background: #f1f3c0;
-    --primary-text: #ed6663;
-    --primary-text-trans: rgba(237, 102, 100, 0.2);
-    --dark-color: #443737;
-    --mark-light: #ea9abb;
+  --primary-background: #f6f7d4;
+  --lightGreen-background: #f1f3c0;
+  --primary-text: #ed6663;
+  --primary-text-trans: rgba(237, 102, 100, 0.2);
+  --dark-color: #443737;
+  --dark-color-trans: rgb(68, 55, 55, 0.2);
+  --mark-light: #ea9abb;
+  --eggplant: #614051;
 }
 
 body {
-    font-family: "Grandstander", cursive;
-    line-height: 1.4;
-    display: flex;
-    flex-direction: column;
-    /* height: 100vh; */
-    overflow-y: auto;
+  font-family: "Grandstander", cursive;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 header {
-    flex: 1;
+  flex: 1;
 }
 
 main {
-    flex: auto;
+  flex: 15;
 }
 
 footer {
-    flex: 1;
+  flex: 1;
 }
 
 .font-big {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 /* Utils */
 .centralize-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-    height: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
 }
 
 .text-dark {
-    color: var(--dark-color);
+  color: var(--dark-color);
 }
 
 .text-primary {
-    color: var(--primary-text);
+  color: var(--primary-text);
 }
 
 .bg-primary {
-    background: var(--lightGreen-background);
-    color: var(--dark-color);
+  background: var(--lightGreen-background);
+  color: var(--dark-color);
 }
 
 .bg-light {
-    background: var(--primary-background);
-    color: var(--primary-text);
+  background: var(--primary-background);
+  color: var(--primary-text);
 }
 
 .bg-secondary-trans {
-    background: var(--primary-text-trans);
-    color: #1a1a2e;
+  background: var(--primary-text-trans);
+  color: #1a1a2e;
 }
 
 .bold-secondary-border {
-    border: 5px solid var(--primary-text-trans);
+  border: 5px solid var(--primary-text-trans);
 }
 
 .btn {
-    border: none;
-    padding: 8px 25px;
-    border-radius: 5px;
-    font-family: inherit;
-    font-weight: bolder;
-    cursor: pointer;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .btn-primary {
-    background: var(--primary-text);
-    color: #f4f4f4;
+  background: var(--primary-text);
+  color: #f4f4f4;
 }
 
 .btn-dark {
-    background: var(--dark-color);
-    color: #f4f4f4;
+  background: var(--dark-color);
+  color: #f4f4f4;
 }
 
 .btn:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .check-box {
-    -webkit-appearance: none;
-    border-radius: 3px;
-    padding: 7px;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: all 0.2s ease;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  padding: 7px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
 }
 
 .checkbox-v-gr:checked {
-    border: 3px solid #158467;
-    color: #333;
+  border: 3px solid #158467;
+  color: #333;
 }
 
 .checkbox-v-gr:checked::after {
-    content: "\2714";
-    font-size: 27px;
-    position: absolute;
-    bottom: -6px;
-    left: -2px;
+  content: "\2714";
+  font-size: 27px;
+  position: absolute;
+  bottom: -6px;
+  left: -2px;
 }
 
 .checkbox-v-gr {
-    border: 3px solid rgba(237, 102, 100, 1);
+  border: 3px solid rgba(237, 102, 100, 1);
 }
 
-.input-field {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 15px;
+.vertical-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px;
 }
 
-.input-field > label {
-    padding-bottom: 5px;
+.vertical-group > label {
+  padding-bottom: 5px;
 }
 
-.input-field > input {
-    padding: 4px 0;
-    font-family: inherit;
+.vertical-group > input {
+  padding: 4px 0;
+  font-family: inherit;
 }
 
 .input-box {
-    border: 1px solid var(--mark-light);
-    border-radius: 4px;
+  border: 1px solid var(--mark-light);
+  border-radius: 4px;
 }
 
 .flex-grid {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .flex-col {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* TODO: Style the combo-box */
 .combo-box {
-    cursor: pointer;
-    appearance: none;
-    padding: 4px 20px 4px 10px;
-    width: 160px;
-    font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  padding: 4px 20px 4px 10px;
+  width: 160px;
+  font-family: inherit;
 }
 
 /* Page specific */
@@ -173,40 +175,40 @@ footer {
 /* Navbar */
 
 .navbar {
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
 }
 
 .navbar .centralize-content {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar .centralize-content ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
+  display: flex;
+  list-style: none;
+  align-items: center;
 }
 
 .navbar .centralize-content ul li {
-    margin-right: 25px;
-    transform: scale(0.8);
-    transition: all 0.25s ease;
+  margin-right: 25px;
+  transform: scale(0.8);
+  transition: all 0.25s ease;
 }
 
 .navbar .centralize-content ul li:hover {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .navbar .centralize-content ul a {
-    text-decoration: none;
-    color: var(--primary-text);
-    font-size: 1.5rem;
-    transition: all 0.25s ease;
+  text-decoration: none;
+  color: var(--primary-text);
+  font-size: 1.5rem;
+  transition: all 0.25s ease;
 }
 
 .navbar .centralize-content ul li a:hover {
-    color: var(--dark-color);
+  color: var(--dark-color);
 }
 
 /* main */
@@ -214,154 +216,189 @@ footer {
 /* main layout */
 
 #main .list-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* LIST HEADING */
 
 .list-heading {
-    padding: 20px 0;
-    flex: 1;
+  padding: 20px 0;
+  flex: 1;
 }
 
 .list-heading > p {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 /* Modal */
 
 /* .modal controls all what happened outside of the dialog */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background: rgb(0, 0, 0, 0.85);
-    z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgb(0, 0, 0, 0.85);
+  z-index: 999;
 
-    animation: modalBackgroundFade 0.2s forwards ease-in;
+  animation: modalBackgroundFade 0.2s forwards ease-in;
 }
 
 @keyframes modalBackgroundFade {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-dialog {
-    position: relative;
-    max-width: 800px;
-    max-height: 80vh;
-    border-radius: 5px;
-    background: rgb(244, 244, 244, 1);
-    overflow: auto;
-    cursor: default;
-    animation: modalDialogEntrance 0.6s forwards
-        cubic-bezier(0.51, 0.92, 0.24, 1.05);
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: rgb(244, 244, 244, 1);
+  overflow: auto;
+  cursor: default;
+  animation: modalDialogEntrance 0.6s forwards cubic-bezier(0.51, 0.92, 0.24, 1.05);
 }
 
 @keyframes modalDialogEntrance {
-    from {
-        transform: translateY(-200%);
-    }
-    to {
-        transform: translateY(0%);
-    }
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 .modal-dialog > * {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .modal-header,
 .modal-footer {
-    background: rgb(211, 211, 211);
+  background: rgb(211, 211, 211);
 }
 
 .modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .modal-header .modal-close {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* FORM */
 
 .add-item-form {
-    height: auto;
-    align-items: center;
-    justify-content: space-around;
+  height: auto;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .add-item-form textarea {
-    flex-basis: 10;
-    max-width: 400px;
-    max-height: 200px;
-    min-height: 100px;
-    min-width: 280px;
+  flex-basis: 10;
+  max-width: 400px;
+  max-height: 200px;
+  min-height: 100px;
+  min-width: 280px;
 }
 
 .add-item > button {
-    margin: 20px auto;
-    width: auto;
+  margin: 20px auto;
+  width: auto;
 }
 
 .form-btns {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 /* List Modifiers */
 
 .list-modifiers.expend {
-    display: block;
+  display: block;
 }
 
 .list-modifiers.collapsed {
-    display: none;
-    transition: display 0.5 ease-out;
+  display: none;
+  transition: display 0.5 ease-out;
 }
 
 /* list */
 
 .list-container {
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 25px 12px 0px 80px;
-    flex: 20;
-    /* overflow: auto; */
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 25px 12px 0px 80px;
+  flex: 20;
+  /* overflow: auto; */
 }
 
 .list-container:nth-last-child(1) {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+/* Sub-Card design */
+
+.sub-card-content > .flex-grid > .flex-col {
+  padding: 10px;
+  border-style: dashed;
+  border-color: var(--primary-text);
+  border-width: 0 3px 0 0;
+}
+
+.sub-card-content > .flex-grid > .flex-col:last-child {
+  border-width: 0;
+}
+
+.sub-card .flex-col {
+  flex: 1;
+}
+
+.sub-card .flex-col:nth-last-child(1) {
+  flex: 2;
+}
+
+.sub-card .vertical-group {
+  margin: 0 10px 10px 0;
+}
+
+.sub-card .vertical-group div {
+  margin: 3px 0 0 0;
+}
+
+.sub-card .info-subject {
+  font-style: italic;
+  font-weight: bolder;
+  text-decoration: underline;
+  color: var(--eggplant);
 }
 
 /* footer */
 .footer {
-    border-top: 1px solid #ccc;
-    padding: 20px;
+  border-top: 1px solid #ccc;
+  padding: 20px;
 }
 
 .contact-icons i {
-    padding: 5px;
-    color: var(--dark-color);
-    transition: color 0.25s ease-in;
+  padding: 5px;
+  color: var(--dark-color);
+  transition: color 0.25s ease-in;
 }
 
 .contact-icons i:hover {
-    color: var(--primary-text);
+  color: var(--primary-text);
 }
