@@ -1,5 +1,5 @@
 //sub-card headers
-const subCardHeaders = ["Liters Filled:", "KMs from last refuel:", "Gas Station:", "Gas Station ID:", "comments"];
+const subCardHeaders = ["Liters Filled", "KMs from last refuel", "Gas Station", "Gas Station ID", "comments"];
 
 // list modifiers
 const createRecordBtn = document.getElementById("createRecord");
@@ -44,7 +44,7 @@ function attachModal(fragment, heading, content) {
   initAddItemBtn(fragment);
 }
 
-function detachModal(e) {
+function detachModal() {
   const modalContainer = document.getElementById("modal").parentElement;
   while (modalContainer.lastChild) {
     modalContainer.removeChild(modalContainer.lastChild);
@@ -61,41 +61,47 @@ function initCloseModalButtons(modalParent) {
   const closeFormBtn = modalFragment.querySelector("#closeForm");
   closeFormBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    detachModal(e);
+    detachModal();
   });
   // close when we click on "Esc" key
   addEventListener("keyup", function (e) {
     if (e.key == "Escape") {
-      detachModal(e);
+      detachModal();
     }
   });
   // close when we click outside the modal dialog
   // const modalOverlay = modalFragment.getElementById("modal");
   modalFragment.onclick = (e) => {
     if (e.target.id == "modal") {
-      detachModal(e);
+      detachModal();
     }
   };
-
-  function addExtendableCard() {}
 }
 
 function initAddItemBtn(modalParent) {
   const modalFragment = modalParent.children[0];
   const addBtn = modalFragment.querySelector("#addItemBtn");
   addBtn.addEventListener("click", function (e) {
-    const refuelData = {
-      date: getFormattedDate(new Date(modalFragment.querySelector("#refuelDate").value)),
-      liters: modalFragment.querySelector("#litersAmount").value,
-      kms: modalFragment.querySelector("#kmFromLastRefuel").value,
-      totalPaid: modalFragment.querySelector("#amountPaid").value,
-      gasStation: modalFragment.querySelector("#gasStation").value,
-      gasStationID: modalFragment.querySelector("#gasStationId").value,
-      comments: modalFragment.querySelector("#comments").value,
-    };
+    const refuelData = collectionModalFormData(modalFragment);
     createExtendableCard(refuelData);
-    // e.preventDefault();
+    e.preventDefault();
   });
+}
+
+function collectionModalFormData(modalFragment) {
+  const refuelData = {
+    date: getFormattedDate(new Date(modalFragment.querySelector("#refuelDate").value)),
+    liters: modalFragment.querySelector("#litersAmount").value,
+    kms: modalFragment.querySelector("#kmFromLastRefuel").value,
+    totalPaid: modalFragment.querySelector("#amountPaid").value + "₪",
+    gasStation: modalFragment.querySelector("#gasStation").value,
+    gasStationID: modalFragment.querySelector("#gasStationId").value,
+    comments: modalFragment.querySelector("#comments").value,
+  };
+  // TODO: input check
+  refuelData.forEach(item,index){
+
+  }
 }
 
 function createExtendableCard(refuelData) {
@@ -112,6 +118,7 @@ function createExtendableCard(refuelData) {
   extendableCard.appendChild(collapsedCard);
   extendableCard.appendChild(subCard);
   refuelList.appendChild(extendableCard);
+  detachModal();
 }
 
 function attachCollapsed(date, price) {
@@ -147,13 +154,14 @@ function attachSubCard(footerData) {
 
   // TODO: Arrow function - to read
   footerData.forEach((item, index) => {
-    if (index % 2 == 0) {
-      if (index > 0) {
+    if (item != undefined) {
+      if (index % 2 == 0) {
+        flexCol = createFlexCol();
         subCardGrid.appendChild(flexCol);
       }
-      flexCol = createFlexCol();
+      const verticalGroup = createVerticalGroup(subCardHeaders[index] + ":", item);
+      flexCol.appendChild(verticalGroup);
     }
-    flexCol.appendChild(createVerticalGroup(subCardHeaders[index], item));
   });
   return subCardRoot;
 }
