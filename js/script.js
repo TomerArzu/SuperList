@@ -82,13 +82,13 @@ function initAddItemBtn(modalParent) {
   const modalFragment = modalParent.children[0];
   const addBtn = modalFragment.querySelector("#addItemBtn");
   addBtn.addEventListener("click", function (e) {
-    const refuelData = collectionModalFormData(modalFragment);
+    const refuelData = dataValidation(modalFragment);
     createExtendableCard(refuelData);
     e.preventDefault();
   });
 }
 
-function collectionModalFormData(modalFragment) {
+function dataValidation(modalFragment) {
   const refuelData = {
     date: getFormattedDate(new Date(modalFragment.querySelector("#refuelDate").value)),
     liters: modalFragment.querySelector("#litersAmount").value,
@@ -99,9 +99,10 @@ function collectionModalFormData(modalFragment) {
     comments: modalFragment.querySelector("#comments").value,
   };
   // TODO: input check
-  refuelData.forEach(item,index){
+  // refuelData.forEach(item,index){
 
-  }
+  // }
+  return refuelData;
 }
 
 function createExtendableCard(refuelData) {
