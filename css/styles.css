@@ -170,6 +170,14 @@ footer {
   font-family: inherit;
 }
 
+.input-error {
+  width: 100%;
+  color: red;
+  background-color: var(--primary-text);
+  border: black 2px solid;
+  border-radius: 5px 5px;
+}
+
 /* Page specific */
 
 /* Navbar */
