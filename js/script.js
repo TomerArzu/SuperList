@@ -80,28 +80,34 @@ function initCloseModalButtons(modalParent) {
 
 function initAddItemBtn(modalParent) {
   const modalFragment = modalParent.children[0];
-  const addBtn = modalFragment.querySelector("#addItemBtn");
-  addBtn.addEventListener("click", function (e) {
+  const addBtn = modalFragment.querySelector("#newItemForm");
+  addBtn.addEventListener("submit", function (e) {
     const refuelData = dataValidation(modalFragment);
-    createExtendableCard(refuelData);
-    e.preventDefault();
+    if (refuelData !== undefined) {
+      createExtendableCard(refuelData);
+      detachModal();
+      e.preventDefault();
+    }
   });
 }
 
 function dataValidation(modalFragment) {
   const refuelData = {
-    date: getFormattedDate(new Date(modalFragment.querySelector("#refuelDate").value)),
-    liters: modalFragment.querySelector("#litersAmount").value,
-    kms: modalFragment.querySelector("#kmFromLastRefuel").value,
-    totalPaid: modalFragment.querySelector("#amountPaid").value + "₪",
-    gasStation: modalFragment.querySelector("#gasStation").value,
-    gasStationID: modalFragment.querySelector("#gasStationId").value,
-    comments: modalFragment.querySelector("#comments").value,
+    date: modalFragment.querySelector("#refuelDate"),
+    liters: modalFragment.querySelector("#litersAmount"),
+    kms: modalFragment.querySelector("#kmFromLastRefuel"),
+    totalPaid: modalFragment.querySelector("#amountPaid"),
+    gasStation: modalFragment.querySelector("#gasStation"),
+    gasStationID: modalFragment.querySelector("#gasStationId"),
+    comments: modalFragment.querySelector("#comments"),
   };
-  // TODO: input check
-  // refuelData.forEach(item,index){
-
-  // }
+  for (let field in refuelData) {
+    if (refuelData[field].hasAttribute("required") && isStringEmptyOrNull(refuelData[field].value) == true) {
+      return undefined;
+    } else {
+      refuelData[field] = refuelData[field].value;
+    }
+  }
   return refuelData;
 }
 
@@ -119,7 +125,6 @@ function createExtendableCard(refuelData) {
   extendableCard.appendChild(collapsedCard);
   extendableCard.appendChild(subCard);
   refuelList.appendChild(extendableCard);
-  detachModal();
 }
 
 function attachCollapsed(date, price) {
@@ -138,7 +143,7 @@ function attachCollapsed(date, price) {
   collapsedHeading.appendChild(collapsedHeader);
   const collapsedFooter = document.createElement("div");
   collapsedFooter.className = "card-footer";
-  collapsedFooter.innerHTML = `<p>${price}</p`;
+  collapsedFooter.innerHTML = `<p>${price} ₪</p>`;
   collapsedDiv.appendChild(collapsedHeading);
   collapsedDiv.appendChild(collapsedFooter);
   return collapsedDiv;
@@ -196,3 +201,26 @@ function setAttributes(element, attrs) {
 function getFormattedDate(date) {
   return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
 }
+
+function isStringEmptyOrNull(string) {
+  const str = string.trim();
+  return !str | (str === "");
+}
+
+// !! NOT IN USE
+// function showCustomValidityErrorMsg(inputElement) {
+//   inputElement.setCustomValidity("This field is required");
+// }
+
+// function showInputErrorMsg(elm, msg) {
+//   const sib = elm.nextElementSibling;
+//   if (sib !== undefined) {
+//     if (sib.classList.contains("display-none")) {
+//       sib.classList.remove("display-none");
+//       sib.classList.add("display-inline");
+//     } else {
+//       sib.classList.remove("display-inline");
+//       sib.classList.add("display-none");
+//     }
+//   }
+// }

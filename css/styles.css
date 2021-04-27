@@ -75,6 +75,10 @@ footer {
   color: #1a1a2e;
 }
 
+.bg-gray {
+  background-color: #eeeeee;
+}
+
 .bold-secondary-border {
   border: 5px solid var(--primary-text-trans);
 }
@@ -170,12 +174,36 @@ footer {
   font-family: inherit;
 }
 
-.input-error {
+input:invalid {
   width: 100%;
-  color: red;
+  color: white;
   background-color: var(--primary-text);
-  border: black 2px solid;
+  border: black 1px solid;
   border-radius: 5px 5px;
+}
+
+.input-error-msg {
+  /* padding: 3px 10px 2px 5px; */
+  width: 90%;
+  /* height: 100%; */
+  color: white;
+  font-size: small;
+  margin-left: 5px;
+  background-color: var(--dark-color);
+  border-left: 2px var(--primary-text) solid;
+  border-right: 2px var(--primary-text) solid;
+  border-bottom: 2px var(--primary-text) solid;
+  border-radius: 0 0 5px 5px;
+}
+
+.display-none {
+  display: none;
+}
+.display-block {
+  display: block;
+}
+.display-inline {
+  display: inline;
 }
 
 /* Page specific */

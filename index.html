@@ -124,7 +124,8 @@
           <div class="flex-col">
             <div class="vertical-group">
               <label for="refuel-date">Refuel Date</label>
-              <input class="input-box" type="date" name="refuelDate" id="refuelDate" required="required" />
+              <input class="input-box" type="date" name="refuelDate" id="refuelDate" required />
+              <span class="input-error-msg display-none">enter valid Date</span>
             </div>
             <div class="vertical-group">
               <label for="litersAmount">Liters You Filled</label>
@@ -134,28 +135,39 @@
                 name="litersAmount"
                 id="litersAmount"
                 required
-                pattern="[0-9]{2,3}"
+                pattern="[0-9]{2,4}"
               />
+              <span class="input-error-msg display-none">enter 2-4 digits number</span>
             </div>
             <div class="vertical-group">
               <label for="kmFromLastRefuel">Km From Last Refuel</label>
-              <input class="input-box" type="text" name="kmFromLastRefuel" id="kmFromLastRefuel" required="required" />
+              <input
+                class="input-box"
+                type="text"
+                name="kmFromLastRefuel"
+                id="kmFromLastRefuel"
+                required
+                pattern="[0-9]{2,3}"
+              />
+              <span class="input-error-msg display-none">enter 2-3 digits number</span>
             </div>
           </div>
           <div class="flex-col">
             <div class="vertical-group">
               <label for="amountPaid">Amount Paid</label>
-              <input class="input-box" type="text" name="amountPaid" id="amountPaid" required="required" />
+              <input class="input-box" type="text" name="amountPaid" id="amountPaid" required pattern="[0-9]{2,4}" />
+              <span class="input-error-msg display-none">enter 2-4 digits number</span>
             </div>
             <div class="vertical-group">
               <label for="gasStation">Gas Station</label>
-              <select class="combo-box input-box" name="gasStation" id="gasStation" required="required">
+              <select class="combo-box input-box" name="gasStation" id="gasStation" required>
                 <option selected hidden>Gas Station</option>
                 <option value="1">Paz</option>
                 <option value="2">Sonol</option>
                 <option value="3">Delek</option>
                 <option value="3">Dor Alon</option>
               </select>
+              <span class="input-error-msg display-none">select gas station</span>
             </div>
             <div class="vertical-group">
               <label for="gasStationId">Gas Station ID</label>

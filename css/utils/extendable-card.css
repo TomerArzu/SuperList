@@ -1,72 +1,72 @@
 /* Reuseable and Extendable card */
 .row-extendable-card {
-    width: 95%;
-    margin: 10px auto;
-    position: relative;
+  width: 95%;
+  margin: 10px auto;
+  position: relative;
 }
 
 /* FOR ARROW EMOJI NEXT TO CARD */
 .row-extendable-card::before {
-    content: "\25B2";
-    position: absolute;
-    float: left;
-    right: 100%;
-    top: 12px;
-    padding: 0 10px;
-    font-size: 1.2rem;
-    transform: scale(1) rotate(90deg);
-    transition: all 0.2s ease-in;
+  content: "\25B2";
+  position: absolute;
+  float: left;
+  right: 100%;
+  top: 12px;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  transform: scale(1) rotate(90deg);
+  transition: all 0.2s ease-in;
 }
 
 .row-extendable-card.expend::before {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .row-extendable-card .card-collapsed:hover {
-    opacity: 0.85;
-    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+  opacity: 0.85;
+  box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .row-extendable-card .card-collapsed {
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    justify-content: space-between;
-    padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
 .row-extendable-card .card-collapsed .card-heading .check-box {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .row-extendable-card .card-collapsed .card-heading > h3 {
-    display: inline;
+  display: inline;
 }
 
 .row-extendable-card .sub-card {
-    width: 98%;
-    margin: 0 auto;
-    height: 0;
-    text-align: left;
+  width: 98%;
+  margin: 0 auto;
+  height: 0;
+  text-align: left;
 }
 
 .sub-card > .sub-card-content {
-    padding: 10px;
-    display: none;
-    opacity: 0;
+  padding: 10px;
+  display: none;
+  opacity: 0;
 }
 
 .row-extendable-card .sub-card.expend {
-    height: auto;
-    border-radius: 0px 0px 10px 10px;
-    border-style: solid;
-    border-color: var(--primary-text-trans);
-    border-width: 0px 2px 2px 2px;
+  height: auto;
+  border-radius: 0px 0px 10px 10px;
+  border-style: solid;
+  border-color: var(--primary-text-trans);
+  border-width: 0px 2px 2px 2px;
 }
 
 .row-extendable-card .sub-card.expend > .sub-card-content {
-    opacity: 1;
-    display: block;
-    padding: 10px;
+  opacity: 1;
+  display: block;
+  padding: 10px;
 }
