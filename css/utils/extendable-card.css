@@ -70,3 +70,9 @@
   display: block;
   padding: 10px;
 }
+
+.edit-card-btn {
+  border: 3px black solid;
+  /* width: 50%; */
+  text-justify: distribute;
+}

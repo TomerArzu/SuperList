@@ -17,6 +17,8 @@
   --dark-color-trans: rgb(68, 55, 55, 0.2);
   --mark-light: #ea9abb;
   --eggplant: #614051;
+  --light-orange: #ff6701;
+  --dark-orange: #ff7a00;
 }
 
 body {
@@ -100,6 +102,19 @@ footer {
 .btn-dark {
   background: var(--dark-color);
   color: #f4f4f4;
+}
+
+.btn-eggplant {
+  background: var(--eggplant);
+  color: #f4f4f4;
+}
+.btn-orange {
+  background: var(--light-orange);
+  color: #f4f4f4;
+}
+.btn-yellow {
+  background: var(--dark-orange);
+  color: #111111;
 }
 
 .btn:hover {
@@ -385,6 +400,17 @@ input:invalid {
 
 .list-container:nth-last-child(1) {
   margin-bottom: 50px;
+}
+
+/* list edits */
+.list-edit {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 10px;
+}
+
+.list-edit > button {
+  margin-left: 5px;
 }
 
 /* Sub-Card design */

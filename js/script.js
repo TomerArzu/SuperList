@@ -8,6 +8,8 @@ const createRecordBtn = document.getElementById("createRecord");
 const refuelList = document.querySelector(".list-container");
 const card = document.querySelector(".row-extendable-card");
 
+document.addEventListener("DOMContentLoaded", loadRefuelsFromStorage);
+
 refuelList.addEventListener("click", function (event) {
   if (event.target.classList.contains("card-collapsed")) {
     const subCard = event.target.nextElementSibling;
@@ -85,6 +87,7 @@ function initAddItemBtn(modalParent) {
     const refuelData = dataValidation(modalFragment);
     if (refuelData !== undefined) {
       createExtendableCard(refuelData);
+      addRefuelToStorage(refuelData);
       detachModal();
       e.preventDefault();
     }
@@ -180,7 +183,7 @@ function createFlexCol() {
 
 function createVerticalGroup(header, input) {
   const subject = document.createElement("div");
-  subject.className = "content-subject";
+  subject.className = "info-subject";
   subject.appendChild(document.createTextNode(header));
   const content = document.createElement("div");
   content.className = "info-content";
@@ -224,3 +227,24 @@ function isStringEmptyOrNull(string) {
 //     }
 //   }
 // }
+
+function loadRefuelsFromStorage() {
+  let savedRefuels;
+  if (localStorage.getItem("refuelList") !== null) {
+    savedRefuels = JSON.parse(localStorage.getItem("refuelList"));
+    for (let i = 0; i < savedRefuels.length; i++) {
+      createExtendableCard(savedRefuels[i]);
+    }
+  }
+}
+
+function addRefuelToStorage(refuelData) {
+  let refuels;
+  if (localStorage.getItem("refuelList") === null) {
+    refuels = [];
+  } else {
+    refuels = JSON.parse(localStorage.getItem("refuelList"));
+  }
+  refuels.push(refuelData);
+  localStorage.setItem("refuelList", JSON.stringify(refuels));
+}
