@@ -36,25 +36,25 @@
           </p>
         </div>
         <section id="modal-form"></section>
-        <div class="list-modifiers">
+        <div class="append-list">
           <button id="createRecord" class="btn btn-primary" data-open="inputModal">Create New Record</button>
         </div>
-        <section id="edit-list" class="list-edit">
-          <button id="edit" class="btn btn-orange">Edit</button>
+        <section id="list-actions" class="list-edit">
+          <button id="edit" class="btn btn-orange">Edit List</button>
           <button id="deleteSelected" class="btn btn-dark">Delete selected</button>
           <button id="selectAll" class="btn btn-eggplant">Select all</button>
         </section>
         <div class="list-container">
           <div class="row-extendable-card">
             <div class="card-collapsed bg-secondary-trans bold-secondary-border">
-              <div class="card-heading">
+              <div class="collapsed-heading">
                 <input type="checkbox" name="added-item" class="check-box checkbox-v-gr" />
                 <h3>Refuel Date</h3>
               </div>
-              <div class="card-footer">
+              <div class="collapsed-footer">
                 <p>Refuel Price</p>
+                <button class="edit-card-btn btn btn-yellow" hidden>Edit</button>
               </div>
-              <button class="edit-card-btn btn btn-yellow">Edit this Refuel</button>
             </div>
             <div class="sub-card bg-secondary-trans">
               <div class="sub-card-content">

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 @import "utils/extendable-card.css";
-
+@import "utils/generic_utils.css";
 /* Globals */
 * {
   padding: 0;
@@ -44,181 +44,6 @@ footer {
 
 .font-big {
   font-size: 2rem;
-}
-
-/* Utils */
-.centralize-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-  height: 100%;
-}
-
-.text-dark {
-  color: var(--dark-color);
-}
-
-.text-primary {
-  color: var(--primary-text);
-}
-
-.bg-primary {
-  background: var(--lightGreen-background);
-  color: var(--dark-color);
-}
-
-.bg-light {
-  background: var(--primary-background);
-  color: var(--primary-text);
-}
-
-.bg-secondary-trans {
-  background: var(--primary-text-trans);
-  color: #1a1a2e;
-}
-
-.bg-gray {
-  background-color: #eeeeee;
-}
-
-.bold-secondary-border {
-  border: 5px solid var(--primary-text-trans);
-}
-
-.btn {
-  border: none;
-  padding: 8px 25px;
-  border-radius: 5px;
-  font-family: inherit;
-  font-weight: bolder;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: var(--primary-text);
-  color: #f4f4f4;
-}
-
-.btn-dark {
-  background: var(--dark-color);
-  color: #f4f4f4;
-}
-
-.btn-eggplant {
-  background: var(--eggplant);
-  color: #f4f4f4;
-}
-.btn-orange {
-  background: var(--light-orange);
-  color: #f4f4f4;
-}
-.btn-yellow {
-  background: var(--dark-orange);
-  color: #111111;
-}
-
-.btn:hover {
-  opacity: 0.8;
-}
-
-.check-box {
-  -webkit-appearance: none;
-  border-radius: 3px;
-  padding: 7px;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-.checkbox-v-gr:checked {
-  border: 3px solid #158467;
-  color: #333;
-}
-
-.checkbox-v-gr:checked::after {
-  content: "\2714";
-  font-size: 27px;
-  position: absolute;
-  bottom: -6px;
-  left: -2px;
-}
-
-.checkbox-v-gr {
-  border: 3px solid rgba(237, 102, 100, 1);
-}
-
-.vertical-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 15px;
-}
-
-.vertical-group > label {
-  padding-bottom: 5px;
-}
-
-.vertical-group > input {
-  padding: 4px 0;
-  font-family: inherit;
-}
-
-.input-box {
-  border: 1px solid var(--mark-light);
-  border-radius: 4px;
-}
-
-.flex-grid {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-/* TODO: Style the combo-box */
-.combo-box {
-  cursor: pointer;
-  appearance: none;
-  padding: 4px 20px 4px 10px;
-  width: 160px;
-  font-family: inherit;
-}
-
-input:invalid {
-  width: 100%;
-  color: white;
-  background-color: var(--primary-text);
-  border: black 1px solid;
-  border-radius: 5px 5px;
-}
-
-.input-error-msg {
-  /* padding: 3px 10px 2px 5px; */
-  width: 90%;
-  /* height: 100%; */
-  color: white;
-  font-size: small;
-  margin-left: 5px;
-  background-color: var(--dark-color);
-  border-left: 2px var(--primary-text) solid;
-  border-right: 2px var(--primary-text) solid;
-  border-bottom: 2px var(--primary-text) solid;
-  border-radius: 0 0 5px 5px;
-}
-
-.display-none {
-  display: none;
-}
-.display-block {
-  display: block;
-}
-.display-inline {
-  display: inline;
 }
 
 /* Page specific */
@@ -377,15 +202,6 @@ input:invalid {
 }
 
 /* List Modifiers */
-
-.list-modifiers.expend {
-  display: block;
-}
-
-.list-modifiers.collapsed {
-  display: none;
-  transition: display 0.5 ease-out;
-}
 
 /* list */
 

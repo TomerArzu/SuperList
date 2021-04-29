@@ -7,6 +7,7 @@ const createRecordBtn = document.getElementById("createRecord");
 // list
 const refuelList = document.querySelector(".list-container");
 const card = document.querySelector(".row-extendable-card");
+const editBtn = document.getElementById("edit");
 
 document.addEventListener("DOMContentLoaded", loadRefuelsFromStorage);
 
@@ -31,6 +32,18 @@ createRecordBtn.addEventListener("click", function () {
     const formHeading = "Add New Refuel";
     attachModal(modalForm, formHeading, formClone);
   }
+});
+
+editBtn.addEventListener("click", (e) => {
+  const editCardBtn = document.querySelectorAll(".edit-card-btn");
+  editCardBtn.forEach((o) => {
+    const isHidden = o.hasAttribute("hidden");
+    if (isHidden) {
+      o.removeAttribute("hidden");
+    } else {
+      o.setAttribute("hidden", "");
+    }
+  });
 });
 
 function attachModal(fragment, heading, content) {
@@ -134,7 +147,7 @@ function attachCollapsed(date, price) {
   const collapsedDiv = document.createElement("div");
   collapsedDiv.className = "card-collapsed bg-secondary-trans bold-secondary-border";
   const collapsedHeading = document.createElement("div");
-  collapsedHeading.className = "card-heading";
+  collapsedHeading.className = "collapsed-heading";
   collapsedHeading.appendChild(document.createElement("input"));
   setAttributes(collapsedHeading.children[0], {
     type: "checkbox",
@@ -145,8 +158,13 @@ function attachCollapsed(date, price) {
   collapsedHeader.appendChild(document.createTextNode(date));
   collapsedHeading.appendChild(collapsedHeader);
   const collapsedFooter = document.createElement("div");
-  collapsedFooter.className = "card-footer";
+  collapsedFooter.className = "collapsed-footer";
   collapsedFooter.innerHTML = `<p>${price} ₪</p>`;
+  const editCard = document.createElement("button");
+  editCard.innerHTML = "Edit";
+  editCard.className = "edit-card-btn btn btn-yellow";
+  editCard.setAttribute("hidden", "");
+  collapsedFooter.appendChild(editCard);
   collapsedDiv.appendChild(collapsedHeading);
   collapsedDiv.appendChild(collapsedFooter);
   return collapsedDiv;

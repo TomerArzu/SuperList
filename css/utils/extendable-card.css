@@ -36,11 +36,11 @@
   padding: 10px 20px;
 }
 
-.row-extendable-card .card-collapsed .card-heading .check-box {
+.row-extendable-card .card-collapsed .collapsed-heading .check-box {
   margin-right: 20px;
 }
 
-.row-extendable-card .card-collapsed .card-heading > h3 {
+.row-extendable-card .card-collapsed .collapsed-heading > h3 {
   display: inline;
 }
 
@@ -71,8 +71,13 @@
   padding: 10px;
 }
 
+.collapsed-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
 .edit-card-btn {
-  border: 3px black solid;
-  /* width: 50%; */
   text-justify: distribute;
+  flex-basis: content;
+  margin-left: 10px;
 }
